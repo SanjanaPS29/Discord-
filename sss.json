@@ -1,0 +1,137 @@
+{
+    "registration": [
+        {
+            "email": "san@gmail.com",
+            "username": "san",
+            "password": "san",
+            "id": 1
+        },
+        {
+            "email": "udhayakumar@softsuave.com",
+            "username": "udhaya",
+            "password": "softsuave#123",
+            "id": 2
+        },
+        {
+            "email": "sanvi@gmail.com",
+            "username": "sanvi",
+            "password": "san",
+            "id": 3
+        },
+        {
+            "email": "mahe@gmail.com",
+            "username": "mahe",
+            "password": "mahe",
+            "id": 4
+        },
+        {
+            "email": "mahe21@gmail.com",
+            "username": "mahe",
+            "password": "mahe",
+            "id": 5
+        }
+    ],
+    "friendRequest": [
+        {
+            "sourceUsername": "udhaya",
+            "targetUsername": "mahe",
+            "status": "friend",
+            "id": 4
+        },
+        {
+            "sourceUsername": "udhaya",
+            "targetUsername": "mahe",
+            "status": "sendRequest",
+            "id": 2
+        },
+        {
+            "sourceUsername": "mahe",
+            "targetUsername": "san",
+            "status": "sendedRequest",
+            "id": 1
+        },
+        {
+            "sourceUsername": "mahe",
+            "targetUsername": "sanvi",
+            "status": "Friend",
+            "id": 5,
+            "statusName": "accepted"
+        },
+        {
+            "sourceUsername": "sanvi",
+            "targetUsername": "udhaya",
+            "status": "sendRequest",
+            "id": 6
+        }
+    ],
+    "friendStatusDetails": [],
+    "status": [
+        {
+            "accept": false,
+            "bloacked": false,
+            "friends": false,
+            "receivedRequest": false,
+            "sendedRequest": false
+        }
+    ],
+    "messages": [
+        {
+            "message": "geelo",
+            "senderName": "san",
+            "receiverName": "sanvi",
+            "id": 1,
+            "messages": []
+        }
+    ],
+    "chatDetails": [
+        {
+            "chatId": "mahe$sanvi",
+            "messages": [
+                {
+                    "message": "geelo",
+                    "senderName": "mahe",
+                    "receiverName": "sanvi"
+                },
+                {
+                    "message": "sads",
+                    "senderName": "san",
+                    "receiverName": "mahe"
+                },
+                {
+                    "message": "hello",
+                    "senderName": "sanvi",
+                    "receiverName": "mahe"
+                }
+            ],
+            "id": 1
+        }
+    ],
+    "conversation": [],
+    "friends": [
+        {
+            "username": "san",
+            "friends": [
+                {
+                    "friendName": "mahe",
+                    "friendId": "mahe$san",
+                    "status": "friend"
+                },
+                {
+                    "friendName": "udhaya",
+                    "friendId": "san$udhaya",
+                    "status": "friend"
+                }
+            ]
+        },
+        {
+            "username": "sanvi",
+            "friends": [
+                {
+                    "friendName": "mahe",
+                    "friendId": "mahe$sanvi",
+                    "status": "friend"
+                }
+            ]
+        }
+    ]
+}

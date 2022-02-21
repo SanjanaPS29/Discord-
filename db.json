@@ -1,0 +1,52 @@
+{
+  "registration": [
+    {
+      "email": "udhayakumar@softsuave.com",
+      "username": "udhaya",
+      "password": "softsuave#123",
+      "id": 2
+    },
+    {
+      "email": "san@gmail.com",
+      "username": "san",
+      "password": "san",
+      "id": 3
+    },
+    {
+      "email": "Navi@gmail.com",
+      "username": "navi",
+      "password": "navi",
+      "id": 4
+    },
+    {
+      "email": "Mahe@gmail.com",
+      "username": "mahe",
+      "password": "mahe",
+      "id": 5
+    }
+  ],
+  "friendDetails": [
+    {
+
+    }
+  ],
+  "friendRequest": [ ],
+  "blockFriend": [
+ 
+  ],
+  "friendStatusDetails": [],
+  "status": [
+    {
+      "accept": false,
+      "bloacked": false,
+      "friends": false,
+      "receivedRequest": false,
+      "sendedRequest": false
+    }
+  ],
+  "messages": [],
+  "chatDetails": [
+  ],
+  "conversation": [],
+  "friends": [ ]
+}
