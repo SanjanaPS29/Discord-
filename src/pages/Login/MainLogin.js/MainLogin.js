@@ -1,7 +1,11 @@
-import React, { useState,useContext,useCallback  } from "react";
+import React, { useState, useContext, useCallback } from "react";
 import { useAuth } from "../../../hooks/ProvideAuth";
-import {AiOutlineEye} from 'react-icons/ai';
-
+import { AiOutlineEye } from "react-icons/ai";
+import { Link } from "react-router-dom";
+import axios from "axios";
+import { useEffect } from "react/cjs/react.development";
+import { useNavigate } from "react-router-dom";
+import { Client } from "../../../axios/Register";
 import {
   MainForm,
   FormArea,
@@ -11,23 +15,15 @@ import {
   PStyle,
   PLast,
   Error,
-  PasswordInput
+  PasswordInput,
 } from "./MainLogin.style";
 
-import { Link } from "react-router-dom";
-import axios from "axios";
-import { useEffect } from "react/cjs/react.development";
-import { useNavigate } from "react-router-dom";
-
 function MainLogin() {
-const {login,setUsername} = useAuth();
+  const { login, setUsername } = useAuth();
 
+  console.log("loggedIn " + login);
 
-console.log('loggedIn '+ login)
-
-  const baseURL="http://localhost:3001/registration"
-  const navigate = useNavigate();
-const [showPassword,setShowPassword]=useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
   const [user, setUser] = useState({
     email: "",
@@ -39,7 +35,7 @@ const [showPassword,setShowPassword]=useState(false);
   const [text, setText] = useState();
 
   const b = async (id, password) => {
-    await axios.get(baseURL+"/"+ id).then((res) => {
+    await Client.get(`/registration/${id}`).then((res) => {
       const details = res.data;
       if (details.password == password) {
         setText("Successfully Logged In");
@@ -59,24 +55,20 @@ const [showPassword,setShowPassword]=useState(false);
 
   const checkUser = async (user) => {
     let id;
-    await axios
-    .get(baseURL+"?email=" + user.email)
-      .then((res) => {
-        res = res.data;
-        if(res.length!=0){
-          const a = res[0].id;
-          id = a;
-            b(id, user.password);
-          return id;
-        }
-        else{
-          setText("Email Id Doesn't Exist");
-          setTimeout(() => {
-            setText(null);
-          }, 1000);
-        }
-
-      });   
+    await Client.get(`/registration?email=${user.email}`).then((res) => {
+      res = res.data;
+      if (res.length != 0) {
+        const a = res[0].id;
+        id = a;
+        b(id, user.password);
+        return id;
+      } else {
+        setText("Email Id Doesn't Exist");
+        setTimeout(() => {
+          setText(null);
+        }, 1000);
+      }
+    });
   };
   function onSubmit(e) {
     e.preventDefault();
@@ -101,14 +93,13 @@ const [showPassword,setShowPassword]=useState(false);
     }
   }
 
-  const handlePassword=()=>{
-    if(showPassword){
+  const handlePassword = () => {
+    if (showPassword) {
       setShowPassword(false);
-    }
-    else{
+    } else {
       setShowPassword(true);
     }
-  }
+  };
 
   useEffect(() => {
     // loginUser("navi");
@@ -117,7 +108,7 @@ const [showPassword,setShowPassword]=useState(false);
 
   return (
     <FormArea>
-{/* <button onClick={login}>Login</button> */}
+      {/* <button onClick={login}>Login</button> */}
 
       <h3>Welcome Back!</h3>
       <p>We're so excited to see you again!</p>
@@ -127,7 +118,13 @@ const [showPassword,setShowPassword]=useState(false);
           <Label>Email</Label>
           <Input type="text" name="email"></Input>
           <Label>Password</Label>
-         <PasswordInput><input type={showPassword ? "text": "password"} name="password" ></input><AiOutlineEye onClick={(e)=>handlePassword()}/></PasswordInput>
+          <PasswordInput>
+            <input
+              type={showPassword ? "text" : "password"}
+              name="password"
+            ></input>
+            <AiOutlineEye onClick={(e) => handlePassword()} />
+          </PasswordInput>
           <PStyle>Forgot your password?</PStyle>
           <LoginButton>Login</LoginButton>
 

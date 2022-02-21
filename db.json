@@ -23,30 +23,42 @@
       "username": "mahe",
       "password": "mahe",
       "id": 5
+    },
+    {
+      "email": "yash@gmail.com",
+      "username": "yash",
+      "password": "yash",
+      "id": 6
     }
   ],
   "friendDetails": [],
   "friendRequest": [
     {
-      "sourceUsername": "navi",
-      "targetUsername": "udhaya",
-      "status": "sendedRequest",
-      "id": 1
+      "sourceUsername": "san",
+      "targetUsername": "mahe",
+      "status": "accepted",
+      "id": 4
     },
     {
-      "sourceUsername": "navi",
-      "targetUsername": "san",
+      "sourceUsername": "san",
+      "targetUsername": "mahe",
       "status": "accepted",
-      "id": 2
-    }
-  ],
-  "blockFriend": [
+      "id": 5
+    },
     {
-      "blokedBy": "navi",
-      "blockedTo": "san",
-      "id": 1
+      "sourceUsername": "san",
+      "targetUsername": "udhaya",
+      "status": "sendedRequest",
+      "id": 6
+    },
+    {
+      "sourceUsername": "yash",
+      "targetUsername": "udhaya",
+      "status": "sendedRequest",
+      "id": 7
     }
   ],
+  "blockFriend": [],
   "friendStatusDetails": [],
   "status": [
     {
@@ -60,42 +72,12 @@
   "messages": [],
   "chatDetails": [
     {
-      "chatId": "navi$san",
+      "chatId": "mahe$san",
       "messages": [
         {
-          "message": "hello",
+          "message": "hola",
           "senderName": "san",
-          "receiverName": "navi"
-        },
-        {
-          "message": "what are you doing",
-          "senderName": "san",
-          "receiverName": "navi"
-        },
-        {
-          "message": "oo",
-          "senderName": "san",
-          "receiverName": "navi"
-        },
-        {
-          "message": "jo",
-          "senderName": "navi",
-          "receiverName": "san"
-        },
-        {
-          "message": "hi",
-          "senderName": "navi",
-          "receiverName": "san"
-        },
-        {
-          "message": "san",
-          "senderName": "san",
-          "receiverName": "navi"
-        },
-        {
-          "message": "i will block you",
-          "senderName": "san",
-          "receiverName": "navi"
+          "receiverName": "mahe"
         }
       ],
       "id": 1
@@ -104,22 +86,22 @@
   "conversation": [],
   "friends": [
     {
-      "username": "navi",
+      "username": "san",
       "friends": [
         {
-          "friendName": "san",
-          "friendId": "navi$san",
+          "friendName": "mahe",
+          "friendId": "mahe$san",
           "status": "friend"
         }
       ],
       "id": 1
     },
     {
-      "username": "san",
+      "username": "mahe",
       "friends": [
         {
-          "friendName": "navi",
-          "friendId": "navi$san",
+          "friendName": "san",
+          "friendId": "mahe$san",
           "status": "friend"
         }
       ],

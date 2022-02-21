@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import {AiOutlineEye} from 'react-icons/ai';
-// import {Client} from '../../axios/Register';
+import {Client} from '../../axios/Register';
 
 import {
   Input,
@@ -18,7 +18,6 @@ import {
 
 
 function Register() {
-  const baseURL="http://localhost:3001/registration" 
 const navigate = useNavigate();
 const [showPassword,setShowPassword]=useState(false);
 
@@ -54,7 +53,7 @@ else{
 }
 
 const createUser=(user)=>{
-  axios.post(baseURL+"/",user);
+  Client.post(`/registration`,user);
 setText("Thank you for Registering");
 setTimeout(()=>{
   console.log(Newuser);
@@ -67,7 +66,7 @@ setTimeout(()=>{
 }
 
 const userExist= async(user)=>{
-await axios.get(baseURL+`?email=${user.email}`)
+await Client(`/registration?email=${user.email}`)
 .then( res => {
   res=res.data;
    if(res.length>0){

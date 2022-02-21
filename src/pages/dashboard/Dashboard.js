@@ -1,25 +1,23 @@
-import React from 'react'
+import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import AsideConversation from './Layouts/dashboard-AsideLeft/asideConversation/AsideConversation';
-import AsideNavbar from './Layouts/dashboard-AsideLeft/asideNavbar/AsideNavbar';
-import ActiveNow from './Layouts/dashboard-AsideRight/activeNow/ActiveNow';
-import Header from './Layouts/dashboard-Header/Header';
-import {DashboardStyle,MainContainer,MainContent} from './dashboard.style'
-import DashboardHome from './pages/DashboardHome/DashboardHome';
-import  NooneAround from '../../assets/image-dashboard/noonearound.PNG'
-import { dashboardRoutes } from '../../routes/Routes';
+import AsideConversation from "./Layouts/dashboard-AsideLeft/asideConversation/AsideConversation";
+import AsideNavbar from "./Layouts/dashboard-AsideLeft/asideNavbar/AsideNavbar";
+import ActiveNow from "./Layouts/dashboard-AsideRight/activeNow/ActiveNow";
+import Header from "./Layouts/dashboard-Header/Header";
+import { DashboardStyle, MainContainer, MainContent } from "./dashboard.style";
+import DashboardHome from "./pages/DashboardHome/DashboardHome";
+import NooneAround from "../../assets/image-dashboard/noonearound.PNG";
+import { dashboardRoutes } from "../../routes/Routes";
 
- function Dashboard() {
+function Dashboard() {
   return (
-    (
- 
     <DashboardStyle>
-      <AsideNavbar/>
-      <AsideConversation/>
+      <AsideNavbar />
+      <AsideConversation />
       <MainContainer>
-      <Header/>
-      <MainContent>
-      {/* <Routes>
+        <Header />
+        <MainContent>
+          {/* <Routes>
 {
   dashboardRoutes?.map(({path,element})=>(
     <Route key={path} exact path={path} element={element} />
@@ -27,14 +25,12 @@ import { dashboardRoutes } from '../../routes/Routes';
 }
  </Routes>  */}
 
-        {/* <DashboardHome/> */}
-        <ActiveNow/>
-      </MainContent>
-        </MainContainer> 
+          {/* <DashboardHome/> */}
+          <ActiveNow />
+        </MainContent>
+      </MainContainer>
     </DashboardStyle>
-    )
   );
 }
-
 
 export default Dashboard;
