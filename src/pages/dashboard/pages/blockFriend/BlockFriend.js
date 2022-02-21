@@ -42,7 +42,7 @@ getBlockFriend();
 <BlockList>
 {
 	blockFriend?.map((block,index)=>(
-    <li ley={index}>{block.blockedTo}<button onClick={()=>unBlock(block.id)}>Unblock</button></li>
+    <li key={index}>{block.blockedTo}<button onClick={()=>unBlock(block.id)}>Unblock</button></li>
 
 		))
 }

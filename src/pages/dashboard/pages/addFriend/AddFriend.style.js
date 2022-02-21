@@ -23,11 +23,12 @@ justify-content:center;
 `
 
 export const Input=styled.input.attrs({type:'text' ,placeholder:'Find or start a conversations'})` 
-margin-top:10px;
+ // margin-top:10px;
 padding:0.5em;
 background-color:#202225;
 border:none;
 color:#fff;
+width:100%;
 `
 
 export const Form=styled.form`
@@ -35,23 +36,24 @@ display:flex;
 `
 
 export const SearchStyle=styled.div`
- //display:flex;
-//  width:100%;
-// justify-content: flex-start;
-//  height:2em;
-//  background-color:#2f3136;
-//  color:#fff;
-//  padding:0.8em 0em;
-//  border-radius: 5px;
-// margin-top:0.5em;
+ display:flex;
+ width:100%;
+justify-content: space-evenly;
+    width: fit-content;
+ height:2em;
+ background-color:#2f3136;
+ color:#fff;
+ padding:0.4em;
+ border-radius: 5px;
+margin-top:0.5em;
+margin-right:0.4em;
+button{
+ border:none;
+ padding-inline:2em;
+ background-color: #5865f2;
+ cursor:pointer;
 
-// button{
-//  border:none;
-//  padding-inline:2em;
-//  background-color: #5865f2;
-//  cursor:pointer;
-
-// }
+}
 
 `
 export const SearchList = styled.ul`

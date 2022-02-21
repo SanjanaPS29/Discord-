@@ -22,56 +22,61 @@ const [text,setText]=useState();
 const {username}=useAuth();
 
 const [notFriend,setNotFriend]=useState([]);
-const [friends,setFriends]=useState([]);
+//const [friends,setFriends]=useState([]);
 
- const getUserFriend= async(name)=>{
-  await Client.get(`/friends?username=${username}`)
-  .then(res=>{
-   const data=res.data;
-  if(data.length !== 0)
-   console.log(data);
-  const friendList=data[0];
-   setFriends(friendList.friends);
-   } 
-  );
-
-
-}
+//  const getUserFriend= async(name)=>{
+//   await Client.get(`/friends?username=${username}`)
+//   .then(res=>{
+//    const data=res.data;
+//   if(data.length !== 0)
+//    console.log(data);
+//   const friendList=data;
+//    setFriends(friendList.friends);
+//    return friendList;
+//    } 
+//   );
+// }
 
  const getData = async () => {
   await axios.get("http://localhost:3001/registration").then((res) => {
    const d = res.data;
+   
    setData(d);
    console.log(data);
+ //  return d;
   });
  };
 
  const filterData = (searchTerm) => {
-  let a=notFriend;
+//  let a=notFriend;
   const search = searchTerm.target.value;
   setaddFriend(search);
  
   if (search === "") {
    setSearch([]);
   } else {
-   const newData = notFriend.filter((user) =>
+   var newData = data.filter((user) =>
     user.username.toLowerCase().includes(search.toLowerCase())
    );
+if(newData.length===0){
+  //setSearch()
+}
    setSearch(newData);
   }
  };
 
-const check= async()=>{
- 
-console.log(data);
-  const li= data?.filter((list) => {
-    // findIndex return array index if found else return -1 if not found
-    return friends.findIndex(genere => genere.friendName !== list.username) > -1;
-  })?.map(list => list);
+// const check= async()=>{
+// const fri= getUserFriend(username);
+//   const d=getData();
+// console.log(d);
+//   const li= d?.filter((list) => {
+//     // findIndex return array index if found else return -1 if not found
+//     return fri.findIndex(genere => genere.friendName !== list.username) > -1;
+//   })?.map(list => list);
 
-var arrayOfValues = await Promise.all(li);
-setNotFriend(arrayOfValues);
-}
+// var arrayOfValues = await Promise.all(li);
+// setNotFriend(arrayOfValues);
+// }
 
 
  const sendFriendRequest = (e) => {
@@ -95,11 +100,8 @@ setText(null);
  };
 
  useEffect(() => {
-    getUserFriend(username);
-  getData();
- 
-    check();
- }, [setData,setFriends,setSearch,setaddFriend]);
+   getData();
+ }, [setData,setSearch,setaddFriend]);
 
 
 const add=user=>{

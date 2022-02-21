@@ -213,7 +213,7 @@ console.log("end")
   await Client.get(`/friends?username=${username}`)
   .then(res=>{
    const data=res.data;
-  if(data.length !== 0)
+  if(data !==[] && data.length !== 0)
    console.log(data);
   const friendList=data[0];
   const frien=friendList.friends;
@@ -233,7 +233,7 @@ const unBlockedFriendList= async()=>{
 await Client.get(`/blockFriend?blockedBy=${username}`)
 .then(res=>{
   var data=res.data;
-  if(data!= [] || data.length != 0){
+  if(res.data !== [] || data.length !== 0){
     console.log("details"+data[0])
 data=data;
 data.map(user=>{

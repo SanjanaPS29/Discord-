@@ -45,6 +45,7 @@ useEffect(()=>{
   return (
 
     <Content> 
+    <h4>Chat Box</h4>
      {
       friends?.map((friend,index)=>( 
         

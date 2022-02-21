@@ -111,8 +111,8 @@ const [showPassword,setShowPassword]=useState(false);
   }
 
   useEffect(() => {
-    loginUser("navi");
-     log();
+    // loginUser("navi");
+    //  log();
   }, []);
 
   return (
